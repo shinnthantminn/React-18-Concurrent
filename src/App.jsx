@@ -20,23 +20,18 @@ const App = () => {
 
   return (
     <div className="text-2xl">
-      <div>
-        <input
-          type="text"
-          className="border"
-          value={text}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        {isPending /* process တစ်ခုလုံ Pending ဖြစ်နေလားကြည့်တာပါ */ ? (
-          <h1>Loading...</h1>
-        ) : (
-          data.map((i, inx) => <p key={inx}>{i}</p>)
-        )}
-      </div>
+      <input
+        type="text"
+        className="border"
+        value={text}
+        onChange={handleChange}
+      />
+      {isPending ? 'Loading...' : data.map((i, inx) => <p key={inx}>{i}</p>)}
+      {/*process တစ်ခုလုံ Pending ဖြစ်နေလားကြည့်တာပါ */}
     </div>
   )
 }
 
 export default App
+
+// method တစ်ခု ထည်းက တန်တူသပ်မှတ်ပေးတဲ့ setState နှစ်ခုကို ခွဲထုတ်ပေးနိုင်ပါတယ်
